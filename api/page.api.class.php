@@ -11,14 +11,15 @@ class PageAPIClass{
         $PAGE = new PageClass();
         //require_once 'core/status.php';
 
-        $page_info = REQUEST('page_info');
+      //  $page_info = REQUEST('page_info');
         $reg_id = REQUEST('reg_id');
 //Update new member information
-        $PageInfoRow = $PAGE -> PageInfo($user_srl, $user_srl ,  ExplodeInfoValue($page_info));
+        $info = array('srl', 'category', 'status', 'write_status', 'admin', 'name_1', 'name_2', 'permission', 'join_day', 'profile_update', 'last_update');
+        $PageInfoRow = $PAGE -> PageInfo($user_srl, $user_srl ,  $info);
 
         if($reg_id) $PAGE -> ProfileInfoUpdate($user_srl, "reg_id", $reg_id);
 
-        print_info($PageInfoRow, ExplodeInfoValue($page_info));
+        print_info($PageInfoRow, $info);
     }
 
 
