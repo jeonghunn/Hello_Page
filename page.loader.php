@@ -10,6 +10,7 @@
 
 //load model
 require_once 'modules/page/model/page.model.php';
+require_once 'modules/page/model/page.model.class.php';
 
 
 //load class
