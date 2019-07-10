@@ -314,17 +314,17 @@ class PageClass
     }
 
     /**
-     * getLastUpdatedUsers
+     * getActiveUsers
      * return active users array
      *
      * @param integer $time : seconds which determine list how long user has active profile.
      * @return mysqli_result $return : Result (User List)_.
      */
-    function getLastUpdatedUsers($user_srl, $time)
+    function getActiveUsers($time)
     {
         $PAGE = new Page();
         if (!$this->isAdmin(getIdentity()['permission'])) return "permission_error";
-        return $PAGE->getLastUpdatedUsers($time);
+        return $PAGE->getActiveUsers($time);
     }
 
 }

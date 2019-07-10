@@ -13,7 +13,7 @@ class Page
     }
 
 
-    function getLastUpdatedUsers($time)
+    function getActiveUsers($time)
     {
         $criterion = getTimeStamp() - $time;
         //  echo getSqlInsertQuery('square_channel', (array) $this);
