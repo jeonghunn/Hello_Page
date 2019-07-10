@@ -16,8 +16,8 @@ class Page
     function getActiveUsers($time)
     {
         $criterion = getTimeStamp() - $time;
-        //  echo getSqlInsertQuery('square_channel', (array) $this);
-        return DBQuery(getSqlAdvSelectQuery('pages', array('last_update' => array(">", $criterion)), "last_update", "DESC", true));
+        //  echo getSqlAdvSelectQuery('pages', array('last_update' => array(">", $criterion)), "last_update", "DESC", true);
+        return DBQuery(getSqlAdvSelectQuery('pages', array('last_access' => array(">", $criterion)), "last_update", "DESC", true));
     }
 
 
