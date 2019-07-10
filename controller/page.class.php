@@ -307,6 +307,9 @@ class PageClass
         return $permission < 3 && $permission > 0;
     }
 
+    function amIAdmin(){
+        return $this -> isAdmin(getIdentity()['permission']);
+    }
 
     function setRegIDAct($page_srl, $Regid)
     {
