@@ -37,6 +37,14 @@ class PageAPIClass{
         print_info($PageInfoRow, ExplodeInfoValue($page_info));
     }
 
+    function API_addUnregisteredUser($user_srl){
+        $PAGE = new PageClass();
+
+        $result = $PAGE->addUnregisteredUser();
+
+
+        printResult($result, 'page_add_unregistered', null, 200, $result);
+    }
 
 
     function API_PageInfoUpdate($user_srl){

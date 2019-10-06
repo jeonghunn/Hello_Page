@@ -223,6 +223,14 @@ class PageClass
         if($ExistStatus == null)   DBQuery("INSERT INTO `status` (`user_srl`, `phone_number`) VALUES ('$member_srl', '3');");
     }
 
+    function addUnregisteredUser()
+    {
+        $result = $this->AddUser("unregistered", 0, null, null, 0, 0, 0, 0, null, null, null, null);
+
+        return $result;
+    }
+
+
     function DeleteUser($user_srl) {
         $deletesql ="DELETE FROM `pages` WHERE `user_srl` = '$user_srl'";
         $deleteresult = DBQuery($deletesql);
