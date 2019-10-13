@@ -341,7 +341,7 @@ class PageClass
 
     function getAllowedStatus($access_user_srl, $access_status) {
         $pageRow = $this -> GetPageInfo($access_user_srl);
-        return getAllowedStatus(getIdentity()['user_srl'], getIdentity()['status'], getIdentity()['permission'], $access_status, $access_user_srl,$pageRow['status'],);
+        return getAllowedStatus(getIdentity()['user_srl'], getIdentity()['status'], getIdentity()['permission'], $access_status, $access_user_srl,$pageRow['status']);
     }
 
 }
