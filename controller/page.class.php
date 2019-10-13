@@ -338,6 +338,12 @@ class PageClass
         return $PAGE->getActiveUsers($time);
     }
 
+
+    function getAllowedStatus($access_user_srl) {
+        $pageRow = $this -> GetPageInfo($access_user_srl);
+        return getAllowedStatus(getIdentity()['user_srl'], getIdentity()['status'], getIdentity()['permission'], $pageRow['status'], $access_user_srl, $pageRow['status'] );
+    }
+
 }
       
 ?>
