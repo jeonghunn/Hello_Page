@@ -20,5 +20,9 @@ class Page
         return DBQuery(getSqlAdvSelectQuery('pages', array('last_access' => array(">", $criterion)), "last_update", "DESC", true));
     }
 
+    function update($user_srl, $array) {
+        return DBQuery(getSqlUpdateQuery('pages', $array, array('srl' => $user_srl), true));
+    }
+
 
 }

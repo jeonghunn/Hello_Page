@@ -301,12 +301,13 @@ class PageClass
 
     function updateLastUpdate($user_srl, $value)
     {
-        return $this->update($user_srl, 'last_update', $value);
+        return $this->update($user_srl, array('last_update' => $value));
     }
 
-    function update($user_srl, $attribute, $value)
+    function update($user_srl, $array)
     {
-        return Model_Page_UpdateByAttribute($user_srl, $attribute, $value);
+        $PAGE = new Page();
+        return $PAGE -> update($user_srl, $array);
     }
 
 

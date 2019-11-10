@@ -24,9 +24,3 @@ function Model_Page_setRegID($page_srl, $Regid)
 {
     return DBQuery("UPDATE `pages` SET `reg_id` = '$Regid'   WHERE `srl` = '$page_srl' AND `status` > -1");
 }
-
-
-function Model_Page_UpdateByAttribute($user_srl, $attribute, $value)
-{
-    return DBQuery("UPDATE `pages` SET `" . $attribute . "` = '$value'   WHERE `srl` = '$user_srl' AND `status` > -1");
-}
